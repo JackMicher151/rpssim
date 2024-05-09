@@ -1,0 +1,81 @@
+* {
+    box-sizing:border-box;
+}
+
+html, body {
+    height: 100dvh;
+}
+
+#mainwrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#oppdisplay, #playerdisplay {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 0 400px;
+    width: 400px;
+}
+
+#oppdisplay {
+    border: solid 5px maroon;
+}
+
+#playerdisplay {
+    border: solid 5px green;
+}
+
+#oppchoice, #playchoice {
+    width: 250px;
+    height: 250px;
+    font-size: 10em;
+    text-align: center;
+}
+
+#playtray {
+    flex: 1 0 10vh;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#gobutton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 60px;
+    height: 25px;
+    text-align: center;
+    background-color: orange;
+    border-radius: 4px;
+    border: solid 2px navy;
+}
+
+#gobutton:active {
+    animation-name: pressed;
+    animation-duration: 150ms;
+    animation-timing-function: linear;
+}
+
+@keyframes pressed {
+    33% {
+        background-color: red;
+    }
+    66% {
+        background-color: purple;
+    }
+    100% {
+        background-color: orange;
+    }
+}
