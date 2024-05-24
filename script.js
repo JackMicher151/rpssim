@@ -64,5 +64,15 @@ function playRound() {
 }
 
 document.getElementById('gobutton').addEventListener( 'click', () => {
+    document.getElementById('rbut').style.display = 'block';
+    document.getElementById('pbut').style.display = 'block';
+    document.getElementById('sbut').style.display = 'block';
     document.getElementById('playresult').innerText = playRound();
 })
+
+// TODO: have r p and s with listeners call playRound(); instead of the Go button
+document.getElementsByClassName('cbutton').array.forEach(element => {
+    element.addEventListener( 'click', () => {
+        
+    })
+});

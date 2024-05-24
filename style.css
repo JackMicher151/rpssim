@@ -52,10 +52,12 @@ html, body {
 
 #buttontray {
     display: flex;
+    justify-content: space-between;
 }
 
 #rbut, #pbut, #sbut {
-    flex: 0 0 80px;
+    display: none;
+    flex: 0 0 70px;
     text-align: center;
 }
 
