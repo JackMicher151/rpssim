@@ -71,8 +71,3 @@ document.getElementById('gobutton').addEventListener( 'click', () => {
 })
 
 // TODO: have r p and s with listeners call playRound(); instead of the Go button
-document.getElementsByClassName('cbutton').array.forEach(element => {
-    element.addEventListener( 'click', () => {
-        
-    })
-});
