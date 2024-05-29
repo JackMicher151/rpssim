@@ -27,16 +27,16 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
-    let playerChoice = prompt("Enter your move (Rock, Paper, or Scissors)").toString();
-    console.log('Player Chose ' + playerChoice);
-    playerChoice = playerChoice.toUpperCase();
-    return (playerChoice === 'ROCK' || playerChoice === 'PAPER' || playerChoice === 'SCISSORS') ? playerChoice : getPlayerChoice();
-}
+// function getPlayerChoice() {
+//     let playerChoice = prompt("Enter your move (Rock, Paper, or Scissors)").toString();
+//     console.log('Player Chose ' + playerChoice);
+//     playerChoice = playerChoice.toUpperCase();
+//     return (playerChoice === 'ROCK' || playerChoice === 'PAPER' || playerChoice === 'SCISSORS') ? playerChoice : getPlayerChoice();
+// }
 
-function playRound() {
+function playRound(choice) {
     let compSelection = getComputerChoice();
-    let playerSelection = getPlayerChoice();
+    let playerSelection = choice;
     let result;
 
     document.getElementById('oppchoice').innerHTML = stringToRPSChar(compSelection);
@@ -67,7 +67,15 @@ document.getElementById('gobutton').addEventListener( 'click', () => {
     document.getElementById('rbut').style.display = 'block';
     document.getElementById('pbut').style.display = 'block';
     document.getElementById('sbut').style.display = 'block';
-    document.getElementById('playresult').innerText = playRound();
+    document.getElementById('rbut').addEventListener( 'click', () => {
+        document.getElementById('playresult').innerText = playRound('ROCK');
+    })
+    document.getElementById('pbut').addEventListener( 'click', () => {
+        document.getElementById('playresult').innerText = playRound('PAPER');
+    })
+    document.getElementById('sbut').addEventListener( 'click', () => {
+        document.getElementById('playresult').innerText = playRound('SCISSORS');
+    })
 })
 
 // TODO: have r p and s with listeners call playRound(); instead of the Go button
