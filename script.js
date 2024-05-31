@@ -3,6 +3,10 @@
 const rockchar = '&#9994';
 const paperchar = '&#9995';
 const scisschar = '&#9996';
+const rockbutton = document.getElementById('rbut');
+const paperbutton = document.getElementById('pbut');
+const scissbutton = document.getElementById('sbut');
+
 
 function stringToRPSChar(inputstr) {
     switch (inputstr) {
@@ -42,6 +46,11 @@ function playRound(choice) {
     document.getElementById('oppchoice').innerHTML = stringToRPSChar(compSelection);
     document.getElementById('playchoice').innerHTML = stringToRPSChar(playerSelection);
     
+    rockbutton.style.display = 'none';
+    paperbutton.style.display = 'none';
+    scissbutton.style.display = 'none';
+
+    document.getElementById('gobutton').style.display = 'block';
 
     if (compSelection === playerSelection) {
         result = 'Tie';
@@ -64,18 +73,20 @@ function playRound(choice) {
 }
 
 document.getElementById('gobutton').addEventListener( 'click', () => {
-    document.getElementById('rbut').style.display = 'block';
-    document.getElementById('pbut').style.display = 'block';
-    document.getElementById('sbut').style.display = 'block';
-    document.getElementById('rbut').addEventListener( 'click', () => {
-        document.getElementById('playresult').innerText = playRound('ROCK');
-    })
-    document.getElementById('pbut').addEventListener( 'click', () => {
-        document.getElementById('playresult').innerText = playRound('PAPER');
-    })
-    document.getElementById('sbut').addEventListener( 'click', () => {
-        document.getElementById('playresult').innerText = playRound('SCISSORS');
-    })
+    document.getElementById('gobutton').style.display = 'none';
+    rockbutton.style.display = 'block';
+    paperbutton.style.display = 'block';
+    scissbutton.style.display = 'block';
+})
+
+rockbutton.addEventListener( 'click', () => {
+    document.getElementById('playresult').innerText = playRound('ROCK');
+})
+paperbutton.addEventListener( 'click', () => {
+    document.getElementById('playresult').innerText = playRound('PAPER');
+})
+scissbutton.addEventListener( 'click', () => {
+    document.getElementById('playresult').innerText = playRound('SCISSORS');
 })
 
 // TODO: have r p and s with listeners call playRound(); instead of the Go button
