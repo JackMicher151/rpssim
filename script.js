@@ -89,4 +89,4 @@ scissbutton.addEventListener( 'click', () => {
     document.getElementById('playresult').innerText = playRound('SCISSORS');
 })
 
-// TODO: have r p and s with listeners call playRound(); instead of the Go button
+// TODO: add functionality for the scoreboard on a list on a div, perhaps use localStorage
