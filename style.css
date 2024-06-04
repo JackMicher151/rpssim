@@ -79,6 +79,16 @@ html, body {
     animation-timing-function: linear;
 }
 
+#scoreboard {
+    position: sticky;
+    height: 90dvh;
+    width: 25dvw;
+    overflow-y: scroll;
+    top: 20px;
+    left: 20px;
+    border: solid 5px cyan;
+}
+
 @keyframes pressed {
     33% {
         background-color: red;

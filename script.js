@@ -1,11 +1,14 @@
 // We will learn about closures later to make something like this private
 // We will learn about currying functions later, just because
-const rockchar = '&#9994';
-const paperchar = '&#9995';
-const scisschar = '&#9996';
-const rockbutton = document.getElementById('rbut');
-const paperbutton = document.getElementById('pbut');
-const scissbutton = document.getElementById('sbut');
+const rockchar = '&#9994',
+    paperchar = '&#9995',
+    scisschar = '&#9996',
+    rockbutton = document.getElementById('rbut'),
+    paperbutton = document.getElementById('pbut'),
+    scissbutton = document.getElementById('sbut'),
+    scorebrd = document.getElementById('scoreboard');
+let playerScore = 0,
+    oppScore = 0;
 
 
 function stringToRPSChar(inputstr) {
@@ -66,6 +69,19 @@ function playRound(choice) {
             case 'SCISSORS':
                 result = compSelection === 'PAPER' ? 'You Win!' : 'You Lose...';
                 break;
+        }
+
+        if (result === 'You Win!') {
+            ++playerScore;
+            let logentry = scorebrd.appendChild(document.createElement('div'));
+            logentry.innerText = 'WIN'
+            logentry.style.color = 'green'
+        }
+        else {
+            ++oppScore;
+            let logentry = scorebrd.appendChild(document.createElement('div'));
+            logentry.innerText = 'LOSS'
+            logentry.style.color = 'red'
         }
     }
 
