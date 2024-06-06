@@ -57,6 +57,10 @@ function playRound(choice) {
 
     if (compSelection === playerSelection) {
         result = 'Tie';
+        let logentry = document.createElement('div');
+        logentry.innerText = 'TIE';
+        logentry.style.color = 'purple';
+        scorebrd.prepend(logentry);
     }
     else {
         switch (playerSelection) {
@@ -73,15 +77,17 @@ function playRound(choice) {
 
         if (result === 'You Win!') {
             ++playerScore;
-            let logentry = scorebrd.appendChild(document.createElement('div'));
-            logentry.innerText = 'WIN'
-            logentry.style.color = 'green'
+            let logentry = document.createElement('div');
+            logentry.innerText = 'WIN';
+            logentry.style.color = 'green';
+            scorebrd.prepend(logentry);
         }
         else {
             ++oppScore;
-            let logentry = scorebrd.appendChild(document.createElement('div'));
-            logentry.innerText = 'LOSS'
-            logentry.style.color = 'red'
+            let logentry = document.createElement('div');
+            logentry.innerText = 'LOSS';
+            logentry.style.color = 'red';
+            scorebrd.prepend(logentry);
         }
     }
 
