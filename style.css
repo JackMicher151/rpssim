@@ -36,9 +36,10 @@ html, body {
 }
 
 #oppchoice, #playchoice {
-    width: 250px;
-    height: 250px;
-    font-size: 10em;
+    width: 80%;
+    height: 80%;
+    padding: 5px;
+    font-size: clamp(8em, 15vw, 14em);
     text-align: center;
 }
 
@@ -52,7 +53,7 @@ html, body {
 
 #buttontray {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 #rbut, #pbut, #sbut {
@@ -79,14 +80,40 @@ html, body {
     animation-timing-function: linear;
 }
 
-#scoreboard {
+#playresult {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#scorewrapper {
     position: sticky;
     height: 90dvh;
     width: 25dvw;
-    overflow-y: scroll;
+    overflow-y: auto;
     top: 20px;
     left: 20px;
     border: solid 5px cyan;
+}
+
+#scorekeeper {
+    display: flex;
+    justify-content: space-evenly;
+    height: 80px;
+    border-style: solid;
+    border-width: 0 0 5px 0;
+    border-color: cyan;
+}
+
+#playerscore, #oppscore {
+    flex: 0 1 20%;
+    background-color: #aaf;
+}
+
+/* might just make this a flex element instead */ 
+#playerscore::before, #oppscore::before {
+    content: "Score";
+    position: relative;
+    text-align: center;
 }
 
 @keyframes pressed {
