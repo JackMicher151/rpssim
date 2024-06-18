@@ -105,17 +105,27 @@ html, body {
 }
 
 #playerscore, #oppscore {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     flex: 0 1 20%;
-    background-color: #aaf;
+    font-size: 1.75em;
 }
 
 /* might just make this a flex element instead */ 
 #playerscore::before, #oppscore::before {
-    content: "Score";
     position: relative;
     text-align: center;
+    font-family: arial;
 }
 
+#playerscore::before {
+    content: "You";
+}
+
+#oppscore::before {
+    content: "Them";
+}
 @keyframes pressed {
     33% {
         background-color: red;

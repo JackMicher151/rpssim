@@ -7,8 +7,13 @@ const rockchar = '&#9994',
     paperbutton = document.getElementById('pbut'),
     scissbutton = document.getElementById('sbut'),
     scorebrd = document.getElementById('scoreboard');
+    playscoreElem = document.getElementById('playerscore');
+    oppscoreElem = document.getElementById('oppscore');
 let playerScore = 0,
     oppScore = 0;
+
+playscoreElem.innerText = playerScore.toString();
+oppscoreElem.innerText = oppScore.toString();
 
 
 function stringToRPSChar(inputstr) {
@@ -77,6 +82,7 @@ function playRound(choice) {
 
         if (result === 'You Win!') {
             ++playerScore;
+            playscoreElem.innerText = playerScore;
             let logentry = document.createElement('div');
             logentry.innerText = 'WIN';
             logentry.style.color = 'green';
@@ -84,6 +90,7 @@ function playRound(choice) {
         }
         else {
             ++oppScore;
+            oppscoreElem.innerText = oppScore;
             let logentry = document.createElement('div');
             logentry.innerText = 'LOSS';
             logentry.style.color = 'red';
