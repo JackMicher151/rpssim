@@ -23,8 +23,8 @@ html, body {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    flex: 1 0 400px;
-    width: 400px;
+    flex: 1 0 40dvh;
+    width: 40dvh;
 }
 
 #oppdisplay {
