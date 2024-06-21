@@ -93,6 +93,8 @@ html, body {
     top: 20px;
     left: 20px;
     border: solid 5px cyan;
+    background-color: white;
+    z-index: 2;
 }
 
 #scorekeeper {
@@ -126,6 +128,7 @@ html, body {
 #oppscore::before {
     content: "Them";
 }
+
 @keyframes pressed {
     33% {
         background-color: red;
