@@ -39,7 +39,7 @@ html, body {
     width: 80%;
     height: 80%;
     padding: 5px;
-    font-size: clamp(8em, 15vw, 14em);
+    font-size: clamp(4em, 10vw, 8em);
     text-align: center;
 }
 
@@ -107,7 +107,7 @@ html, body {
 }
 
 #playerscore, #oppscore {
-    display: flex;
+    display: none;
     align-items: center;
     flex-direction: column;
     flex: 0 1 20%;
@@ -127,6 +127,11 @@ html, body {
 
 #oppscore::before {
     content: "Them";
+}
+
+#gamestartbut {
+    flex: 1 0 auto;
+    text-align: center;
 }
 
 @keyframes pressed {

@@ -6,11 +6,13 @@ const rockchar = '&#9994',
     rockbutton = document.getElementById('rbut'),
     paperbutton = document.getElementById('pbut'),
     scissbutton = document.getElementById('sbut'),
-    scorebrd = document.getElementById('scoreboard');
-    playscoreElem = document.getElementById('playerscore');
-    oppscoreElem = document.getElementById('oppscore');
+    scorebrd = document.getElementById('scoreboard'),
+    playscoreElem = document.getElementById('playerscore'),
+    oppscoreElem = document.getElementById('oppscore'),
+    gameStartButtonElem = document.getElementById('gamestartbut');
 let playerScore = 0,
-    oppScore = 0;
+    oppScore = 0,
+    gameStarted = false;
 
 playscoreElem.innerText = playerScore.toString();
 oppscoreElem.innerText = oppScore.toString();
@@ -96,10 +98,38 @@ function playRound(choice) {
             logentry.style.color = 'red';
             scorebrd.prepend(logentry);
         }
+        if (gameStarted) {
+            if (playerScore === 5) {
+                playscoreElem.style.display = 'none';
+                oppscoreElem.style.display = 'none';
+                gameStartButtonElem.style.display = 'flex';
+                gameStartButtonElem.innerText = 'You Win! Best to 5 Again?'
+            }
+            else if (oppScore === 5) {
+                playscoreElem.style.display = 'none';
+                oppscoreElem.style.display = 'none';
+                gameStartButtonElem.style.display = 'flex';
+                gameStartButtonElem.innerText = 'Tough Luck. Best to 5 Again?'
+            }
+        }
     }
 
     return result;
 }
+
+function startBestToFive () {
+    gameStarted = true;
+    playerScore = 0;
+    oppScore = 0;
+    playscoreElem.innerText = 0;
+    oppscoreElem.innerText = 0;
+    gameStartButtonElem.style.display = 'none';
+    document.getElementById('playerscore').style.display = 'flex';
+    document.getElementById('oppscore').style.display = 'flex';
+    scorebrd.textContent = '';
+}
+
+gameStartButtonElem.addEventListener( 'click', startBestToFive)
 
 document.getElementById('gobutton').addEventListener( 'click', () => {
     document.getElementById('gobutton').style.display = 'none';
@@ -117,5 +147,3 @@ paperbutton.addEventListener( 'click', () => {
 scissbutton.addEventListener( 'click', () => {
     document.getElementById('playresult').innerText = playRound('SCISSORS');
 })
-
-// TODO: add functionality for the scoreboard on a list on a div, perhaps use localStorage
