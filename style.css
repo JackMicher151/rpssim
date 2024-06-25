@@ -146,13 +146,13 @@ html, body {
     }
 }
 
-@media only screen and (max-width: 1092px) {
+@media only screen and (max-width: 1092px), only screen and (max-height: 540px)  {
     #oppdisplay, #playerdisplay {
         flex: 1 0 200px;
         width: 200px;
     }
     #mainwrapper {
-        left: 70%;
+        left: 60%;
         transform: translateX(-50%) translateY(-50%);
         height: 90%;
     }
