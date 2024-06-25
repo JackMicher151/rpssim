@@ -148,12 +148,26 @@ html, body {
 
 @media only screen and (max-width: 1092px), only screen and (max-height: 540px)  {
     #oppdisplay, #playerdisplay {
-        flex: 1 0 200px;
+        flex: 0 1 200px;
         width: 200px;
     }
     #mainwrapper {
         left: 60%;
         transform: translateX(-50%) translateY(-50%);
         height: 90%;
+        width: 70dvw;
+        align-items: center;
+    }
+    #playtray {
+        position: relative;
+        width: 50dvw;
+    }
+    #buttontray {
+        flex-direction: column;
+        width: 50dvw;
+    }
+    #rbut, #pbut, #sbut {
+        flex: 0 0 18px;
+        text-align: center;
     }
 }
